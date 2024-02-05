@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,span{
+            border: 5px solid gold;
+        }
+        #grid{
+            border: 5px solid red;
+            display: grid;
+            grid-template-columns: 150px 1fr; /* 1fr 첫번째 프레임을 150px로 고정 */
+        }
+        #s ol{
+            /*ol이란 선택자의 s라는 id값이 있다면 ~~*/
+            background-color: aliceblue;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <hr style="height: 8px;background-color: #000000; margin-bottom: 0;">
+    <h1 style="margin-top: 0px;">Grid</h1>
+    <p>디자인 위해 사용하는 무색, 무취 태그를 사용 => div태그 .디비전의 약자
+        <br>기본적으로 div태그는 box레벨
+    </p>
+    <div>네이버</div> <div>다음</div>
+    <p>div말고 나란히 사용할려면 span 태그도 존재</p>
+    <span>크롬</span><span>웨일</span>
+    <br><br>
+    <div id="grid">
+        <div>네이버</div> <div>다음</div>
+    </div>
+</body>
+</html>

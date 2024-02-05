@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS.html</title>
+    <!--css은 새로운 언어를 배우는일. but 각 태그마다 따로 설정없이 단일화 => 유지보수강화-->
+    <!--
+        이 웹페이지에서 우리가 주고 싶은 효과를 선택하는 자, 이를 선택자(셀렉터, ex.Ace)라고함
+        선택자 내부의 지정된 것을 효과(디컬러레이션)이라함. 
+        CSS 사용법 2가지 1.style 태그 사용 2.style 속성을 쓴다
+    -->
+    <!-- 
+        Ace는 셀렉터,  그 안에 속성은 선언/디컬러레이션/선언라는 이름으로 부름.
+        각 속성은 속성(Property)와 속성값(Value)로 이루어줘있음. 
+    -->
+    <style> 
+    /* 스타일 태그 내에서 주석 처리는 다름 */
+        b { 
+           color:red;
+           text-decoration: none;
+        }
+        p {
+            text-align: center;
+        }
+        .saw{ 
+            /* 
+            saw라는 클래스값을 가지고 있는 모든 태그에 대해서 ~~ => 앞에 . 븥힘
+            앞에 .이 없을시 클래스가 아닌 태그로 인식하여 처림함.
+            */
+         color: gray;   
+        }
+        img{
+            border: solid rgb(0, 255, 179);
+        }
+        #New{
+            /* #은 ID 선택자*/
+            text-align: start;
+            font-size: larger;
+            background-image: linear-gradient(to left, violet, indigo, blue, green, orange, red);   -webkit-background-clip: text;
+  color: transparent;
+        }
+        h1{
+            border-width: 5px;
+            border-color: red;
+            border-style: solid;
+            /*
+              h태그는 화면 전체를 사용한다는 것을 알 수 있음 -> box level element
+              a태그는 자신의 구역만 사용 => inline level element
+            */ 
+            padding:2px; /* 테두리 와콘테츠 사이 공간 설정*/
+            margin: 0;/* 테두리 사이 간격 설정*/
+            /* width: 100px -> 이용해서 box level를 축소할 수 있음. */
+        }
+        #gird{
+            display: grid;
+            grid-template-columns: 150px 1fr 2fr 3fr 4fr;
+         }
+    </style>
+</head>
+<body>
+    <!-- style은 HTML속성이고 color:red는 CSS의 효과-->
+    <H4><b style="color: red; text-decoration: double;">글자</b>를 바꿔 봅시다.</H4>
+    <p>
+        글자를 중앙 정렬하고 싶어요.<br>
+        그럴땐 CSS의 style 셀럭터에서 태그를 바꿔보세용!<br>
+        지금은 text-align 속성을 center 값을 준 상태에요!
+    </p>
+    <p>
+        다른 P태그들도 전부 동일하게 적용이 되었네요!
+    </p>
+    <p style="text-align:end">
+        이번 P태그는 따로 style 속성을 설정하여 end 값을 주었습니다!!!!!!
+    </p>
+    <p style="text-align:start"> text-align:start </p>
+    <p style="text-align:left"> text-align:left </p>
+    <p style="text-align:right"> text-align:right </p>
+
+    <h3>이제 H태그의 크기를 설정해봅시다</h3>
+    <p>
+        구글에 CSS text size property 검색으로 크기 확인가능<br>
+        <a href="https://www.w3schools.com/cssref/pr_font_font-size.php">(W3C)</a><br>
+    </p>
+    <p style="font-size: 150%;">이 문자의 속성과 속성값은 font-size: 150% </p>
+
+    <H3>CSS 기본이 되는 토대는 2가지 효과와 선택자</H3>
+    이번엔 선택자에 대해 알아보자 => F12를 눌러 head태그안에 있는 style부분을 선택자라 함<br>
+    선택자에서 설정한 값은 동일한 명을 가진 태그에 전체 적용됨
+    <ul>
+        <li> 기본설정 </li>
+        <li class = "saw"> class = "saw" 적용</li>
+    </ul>
+    <p>이미지 태그에 테두리 속성을 적용<br> <img src="./Just do it.png"></p>
+    <p>추가로 클래스의 우선순위는 head의 style에서 작성한 마지막 클래스를 선택</p>
+
+    <p id="New">속성 아이디를 이용하여 스타일 변경도 가능.<br>태그=p & 클래스=saw지만 id 값 따름</p>
+    <p> 우선순위는 구체적인 것이 보편적인 것보단  우선순위가 높다 </p>
+
+    이제 우리는 CSS select를 검색하여 나온 결과를 어느정도 해석가능한 능력을 가지게됨
+    <a href="https://www.w3schools.com/cssref/css_selectors.php">
+    <br>CSS Selector Reference</a>
+    <br>이러한 셀럭터로 원하는 디자인의 페이지 구현도 코드의 압축도 효율성도 높아짐
+    <br>
+    <hr style="height: 4px; background: #000000;">
+
+    <p>
+        <h1>CSS</h1> <!-- h태그 처럼 화면을 쓰는 것을 box level element라함.-->
+        Cascading Style Sheets <a href="https://namu.wiki/w/CSS">(CSS)</a> 
+        is a style sheet language used <!--a처럼 자신구역만 사용. inline level element-->
+        for describing the presentation of a document written in a markup language.
+        [1] Although most often used to set the visual style of web pages and 
+        user interfaces written in HTML and XHTML, the language can be applied to 
+        any XML document, including plain XML, SVG and XUL, and is applicable to 
+        rendering in speech, or on other media. Along with HTML and JavaScript,
+        CSS is a cornerstone technology used by most websites to create visually
+        engaging webpages, user interfaces for web applications, 
+        and user interfaces for many mobile applications.
+    </p>
+        <h3>테두리 구성 요성</h3><br>
+        <img src="./pmb.gif">
+        <br>F12 개발자 도구를 통해 확인 가능.
+    <p>
+        가로(수직)줄 긋기. 세로는 hr로 가능
+        <hr style="border-bottom: 3px solid gold;">
+        <ol style="border-right: 3px solid gold; width: 100px;">
+            <li>플래시</li><li>블랙플래시</li><li>키드플래시</li>
+        </ol>
+        <br> 두 줄이 겹치지 않음. 개발자 도구를 통해 어디서 생긴 여백인지 확인가능
+        <br> 범인은 margin 이를 margin=0로 수정
+        <hr style="border-bottom: 3px solid gold; margin: 0px;">
+        <ol style="border-right: 3px solid gold; width: 100px;margin: 0px;">
+            <li>플래시</li><li>블랙플래시</li><li>키드플래시</li>
+        </ol>
+    </p>
+
+    <p>
+        <div style="margin-bottom: 0px;">grid에서 배운 div와 span을 이용한 예제</div>
+        <hr style="height: 8px; background-color: gold; margin-bottom: 0px;">
+        <div id="gird">
+            <div>
+                <ol style="border-right: 3px solid gold; width: 100px; margin-top: 0px;">
+                    <li>플래시</li><li>블랙플래시</li><li>키드플래시</li>
+                 </ol>
+            </div> 
+            <div>
+                <ol style="border-right: 3px solid gold; width: 100px; margin-top: 0px;">
+                   <li>그린랜턴</li><li>블랙랜턴</li><li>옐로랜턴</li>
+                </ol>
+            </div>
+            <div>
+                <ol style="border-right: 3px solid gold; width: 100px; margin-top: 0px;">
+                   <li>배트맨</li><li>조커</li><li>스케어크로우</li>
+                </ol>
+            </div>
+            <div>
+                <ol style="border-right: 3px solid gold; width: 100px; margin-top: 0px;">
+                   <li>슈퍼맨</li><li>매니악</li><li>장군조드</li>
+                </ol>
+            </div>
+        </div>
+    </p>
+</body>
+</html>
