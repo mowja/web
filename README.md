@@ -16,8 +16,8 @@ CSS.html
 
 ======================
 방문 가능한 하위 링크
-web/hello.html
-web/Sever_and_Client.html
-web/CSS.html
-web/Web2/grid.html
-web/Web2/media.html
+1. web/hello.html
+2. web/Sever_and_Client.html
+3. web/CSS.html
+4. web/Web2/grid.html
+5. web/Web2/media.html
